@@ -35,4 +35,10 @@ module SDL2::Q
         end
         @@fonts[font_file][font_size].size_text text
     end
+    def set_color(color)
+        @@renderer.draw_color = color
+    end
+    def draw_point_without_color(x, y)
+        @@renderer.draw_point(x, y)
+    end
 end
