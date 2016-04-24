@@ -1,0 +1,6 @@
+lib/lib.rb
+	sdl2quick の拡張ライブラリです
+
+lib/sample(rename it to game.rb)
+	lib/lib.rb のサンプルコードです
+	game.rb にリネームして実行してみてください
