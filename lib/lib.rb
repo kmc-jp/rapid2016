@@ -41,4 +41,7 @@ module SDL2::Q
     def draw_point_without_color(x, y)
         @@renderer.draw_point(x, y)
     end
+    def fill_rect_without_color(x, y, w, h)
+        @@renderer.fill_rect(SDL2::Rect[x, y, w, h])
+    end
 end

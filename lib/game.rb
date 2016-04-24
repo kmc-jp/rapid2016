@@ -26,6 +26,7 @@ mainloop do
             draw_point_without_color x, y
         end
     end
+    fill_rect_without_color 200, 200, 50, 50
 
     $loop += 1
 end
