@@ -8,6 +8,7 @@ module SDL2::Q
     # @param color [[Integer, Integer, Integer]] 色
     # @return [void]
     def fill_circle(x, y, radius, color)
+        x, y, radius = x.round, y.round, radius.round
         @@renderer.draw_color = color
         left, right = x-radius, x+radius
         for draw_x in left..right
