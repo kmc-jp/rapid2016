@@ -1,3 +1,6 @@
+PATH_LIB = ARGV.shift
+$fonts = []
+
 module SDL2::Q
     module_function
     # 塗りつぶされた円を描画する
@@ -26,7 +29,7 @@ module SDL2::Q
     # @param font_size [String] 文字の大きさ
     # @return [Integer, Integer] 横幅, 縦幅
     @@fonts = {}
-    def text_size(text, font_size, font_file = "sdl2quick/VL-Gothic-Regular.ttf")
+    def text_size(text, font_size, font_file = "#{PATH_LIB}/sdl2quick/VL-Gothic-Regular.ttf")
         if @@fonts[font_file].nil?
             @@fonts[font_file] = []
         end
@@ -34,14 +37,5 @@ module SDL2::Q
             @@fonts[font_file][font_size] = SDL2::TTF.open font_file, font_size
         end
         @@fonts[font_file][font_size].size_text text
-    end
-    def set_color(color)
-        @@renderer.draw_color = color
-    end
-    def draw_point_without_color(x, y)
-        @@renderer.draw_point(x, y)
-    end
-    def fill_rect_without_color(x, y, w, h)
-        @@renderer.fill_rect(SDL2::Rect[x, y, w, h])
     end
 end

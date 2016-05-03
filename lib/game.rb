@@ -20,13 +20,5 @@ mainloop do
     draw_rect draw_x, draw_y, w, h, RED
     text txt, x: draw_x, y: draw_y, color: WHITE
 
-    set_color [255, 255, 255].map{ |item| item * Math.sin($loop/10.0) * Math.sin($loop/10.0) }
-    0.upto(20) do |y|
-        0.upto($window_width) do |x|
-            draw_point_without_color x, y
-        end
-    end
-    fill_rect_without_color 200, 200, 50, 50
-
     $loop += 1
 end
